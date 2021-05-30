@@ -12,7 +12,27 @@ namespace LocalSystemDevicesInterface.Providers
         {
         }
 
-        public ILocalSystemComputerNames ComputerNames => throw new NotImplementedException();
+        protected virtual string GetMachineName()
+        {
+            return System.Environment.MachineName;
+        }
+
+        public ILocalSystemComputerNames ComputerNames
+        {
+            get 
+            {
+                return new LocalSystemComputerNames()
+                {
+                    MachineName = GetMachineName(),
+                    FQDN = GetFQDN()
+                };
+            }
+        }
+
+        private string GetFQDN()
+        {
+            return System.Net.Dns.GetHostEntry("").HostName;
+        }
 
         public OperatingSystemClass OperatingSystem
         {

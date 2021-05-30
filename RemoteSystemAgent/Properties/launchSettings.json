@@ -19,7 +19,6 @@
     },
     "RemoteSystemAgent": {
       "commandName": "Project",
-      "launchBrowser": true,
       "launchUrl": "localsystem",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
