@@ -11,7 +11,7 @@ namespace RemoteSystemAgent.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class LocalSystemController : ControllerBase
     {
         public LocalSystemController(ILogger<LocalSystemController> logger,

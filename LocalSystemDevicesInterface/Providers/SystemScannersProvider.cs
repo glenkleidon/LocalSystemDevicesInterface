@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocalSystemDevicesInterface.Scanners;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,6 +14,8 @@ namespace LocalSystemDevicesInterface.Providers
                 return GetScannerNames();
             }
         }
+
+        public abstract ISystemScannerCapabilities Capabilities(string scannerName);
 
         protected abstract IEnumerable<string> GetScannerNames();
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LocalSystemDevicesInterface.Providers
+namespace LocalSystemDevicesInterface.DataTypes
 {
     public class LocalSystemComputerNames : ILocalSystemComputerNames
     {

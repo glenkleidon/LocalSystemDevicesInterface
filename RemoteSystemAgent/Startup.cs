@@ -9,6 +9,8 @@ using Microsoft.Extensions.Hosting;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
+using RemoteSystemAgent.CustomProviders;
+using LocalSystemDevicesInterface.DataTypes;
 
 namespace RemoteSystemAgent
 {
@@ -33,12 +35,14 @@ namespace RemoteSystemAgent
 
 
             services.AddSingleton<ILocalSystemDeviceInterface, LocalSystemDeviceInterface>();
-            services.AddTransient<ILocalSystemComputerNames, LocalSystemComputerNames>();
+
+            // Any of the following providers can be replaced with your own implementations.
             services.AddTransient<ISystemDetailsProvider, SystemDetailsProvider>();
             services.AddTransient<ISystemPrintersProvider, SystemPrintersProviderWin>();
-            services.AddTransient<ISystemScannersProvider, SystemScannersProviderWin>();
 
-            
+            // Use a provider implementing the Open source project DNTScanner 
+            // https://github.com/VahidN/DNTScanner.Core
+            services.AddTransient<ISystemScannersProvider, SystemScannersProviderDNT>();
 
             services.AddAuthentication(BasicAuthenticationDefaults.AuthenticationScheme)
             .AddBasic(options =>

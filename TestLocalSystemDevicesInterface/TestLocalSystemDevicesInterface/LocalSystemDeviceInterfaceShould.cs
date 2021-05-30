@@ -5,6 +5,7 @@ using Moq;
 using LocalSystemDevicesInterface.Providers;
 using System.Collections.Generic;
 using System.Linq;
+using LocalSystemDevicesInterface.DataTypes;
 
 namespace TestLocalSystemDevicesInterface
 {
