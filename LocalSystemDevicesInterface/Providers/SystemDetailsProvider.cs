@@ -6,7 +6,7 @@ using static LocalSystemDevicesInterface.Types;
 
 namespace LocalSystemDevicesInterface.Providers
 {
-    class SystemDetailsProvider : ISystemDetailsProvider
+    public class SystemDetailsProvider : ISystemDetailsProvider
     {
         public SystemDetailsProvider()
         {
